@@ -8,6 +8,7 @@
 
 void HandleTCPClient(int clntSocket)
 {
+	printf("HandleTCPClient in TCPClientUtility.c\n");
 	char buffer[BUFSIZE];
 	ssize_t numBytesRcvd = recv(clntSocket, buffer, BUFSIZE, 0);
 	if(numBytesRcvd < 0)

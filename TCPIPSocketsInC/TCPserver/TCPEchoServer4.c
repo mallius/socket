@@ -4,30 +4,6 @@
 
 static const int MAXPENDING = 5;
 
-void HandleTCPClient(int clntSocket)
-{
-	char buffer[BUFSIZE];	
-	ssize_t numBytesRcvd = recv(clntSocket, buffer, BUFSIZE, 0);
-	if(numBytesRcvd < 0)
-	{
-		DieWithSystemMessage("recv() failed");
-	}
-
-	while(numBytesRcvd > 0)
-	{
-		ssize_t numBytesSent = send(clntSocket, buffer, numBytesRcvd, 0);
-		if(numBytesSent < 0)
-			DieWithSystemMessage("send() failed");	
-		else if(numBytesSent != numBytesRcvd)
-			DieWithUserMessage("send()", "sent unexpected number of bytes");
-		
-		numBytesRcvd = recv(clntSocket, buffer, BUFSIZE, 0);
-		if(numBytesRcvd < 0)
-			DieWithSystemMessage("recv() failed");
-	}
-	close(clntSocket);
-}
-
 int main(int argc, char *argv[])
 {
 	if(argc != 2) DieWithUserMessage("Parameters(s)", "<Server Port>");

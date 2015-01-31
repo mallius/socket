@@ -9,7 +9,8 @@
 #include <fcntl.h>
 #include <stdbool.h>
 #include <sys/wait.h>
-
+#include <netinet/in.h>
+#include <arpa/inet.h>
 
 void DieWithSystemMessage(const char *msg);
 void DieWithUserMessage(const char *msg, const char *detail);

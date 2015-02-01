@@ -1,14 +1,12 @@
 include ../Make.defines
 
-PROGS =	TCPEchoServer4 
+PROGS =	TCPEchoServer6 
 
 
 all:	${PROGS}
 
-TCPEchoServer4:	TCPEchoServer4.o 
-		${CC} ${CFLAGS} -o $@ TCPEchoServer4.o ${LIBS}
-GetAddrInfo:	GetAddrInfo.o 
-		${CC} ${CFLAGS} -o $@ GetAddrInfo.o ${LIBS}
+TCPEchoServer6:	TCPEchoServer6.o 
+		${CC} ${CFLAGS} -o $@ TCPEchoServer6.o ${LIBS}
 clean:
 		rm -f ${PROGS} ${CLEANFILES}
 

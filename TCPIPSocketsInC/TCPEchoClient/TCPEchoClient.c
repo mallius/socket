@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 	char *server = argv[1];
 	char *echoString = argv[2];
 
-	in_port_t service = (argc == 4) ? atoi(argv[3]) : "echo";
+	char *service = (argc == 4) ? atoi(argv[3]) : "echo";
 
 	int sock = SetupTCPClientSocket(server, service);
 	if(sock < 0)

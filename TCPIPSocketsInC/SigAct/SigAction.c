@@ -26,5 +26,5 @@ int main(int argc, char *argv[])
 void InterruptSignalHandler(int signalType)
 {
 	puts("Interrupt Received. Exiting program.");
-	exit(1);
+	sleep(3);
 }

@@ -16,7 +16,8 @@ DIRS = 	lib \
 	UDPclient \
 	UDPEchoClient-Timeout \
 	UDPEchoServer-SIGIO \
-	UDPserver
+	UDPserver \
+	TCPserver6
 # Dummy targets for building and clobbering everything in all subdirectories
 
 all: 	

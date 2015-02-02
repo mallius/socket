@@ -57,8 +57,10 @@ int main(int argc, char *argv[])
 	else if(numBytes != echoStringLen)
 		DieWithUserMessage("recvfrom() error", "received unexpected number of bytes");
 
+#if 0
 	if(!SockAddrsEqual(servAddr->ai_addr, (struct sockaddr *)&fromAddr))
 		DieWithUserMessage("recvfrom()", "received a packet from unknown source");
+#endif	
 
 	freeaddrinfo(servAddr);
 
